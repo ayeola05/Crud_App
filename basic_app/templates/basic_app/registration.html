@@ -1,0 +1,45 @@
+{% extends 'basic_app/base.html' %}
+
+
+{% block content %}
+
+<div class="container">
+
+	<h1>Register For My Functional Site</h1>
+
+	<div class="jumbotron">
+		<form method='POST'>
+			{% csrf_token %}
+			<p>
+				<label>Username: </label>
+				{{form.username}}
+			</p>
+			
+			<p>
+				<label>Email: </label>
+				{{form.email}}
+			</p>
+			
+			<p>
+				<label>Password: </label>
+				{{form.password1}}
+			</p>
+
+			<p>
+				<label>Confirm Password: </label>
+				{{form.password2}}
+			</p>
+			
+
+
+			<input class="btn btn-primary" type="submit" value="Register" name="">
+			
+		</form>
+			
+		
+	</div>
+	
+</div>
+
+
+{% endblock content %}

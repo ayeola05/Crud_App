@@ -1,0 +1,20 @@
+{% extends 'basic_app/base.html ' %}
+
+{% block content %}
+
+<div class="container">
+	<div class="jumbotron">
+		<h1>Are you sure you wanna delete {{school}}?</h1>
+
+		<form method="POST" action="{% url 'basic_app:delete' school.id %}">
+			{% csrf_token %}
+			<a class="btn btn-warning" href="{% url 'basic_app:list' %}">Cancel</a>
+			<input class="btn btn-danger" type="submit" value="Confirm" name="">
+			
+		</form>
+		
+	</div>
+	
+</div>
+
+{% endblock content %}
